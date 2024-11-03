@@ -8,7 +8,6 @@ def create(db: Session, sandwich):
     db_sandwich = models.Sandwich(
         sandwich_name=sandwich.sandwich_name,
         price=sandwich.price
-        
     )
     # Add the newly created Order object to the database session
     db.add(db_sandwich)
