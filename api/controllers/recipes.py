@@ -9,8 +9,6 @@ def create(db: Session, recipe: schemas.RecipeCreate):
         sandwich_id=recipe.sandwich_id,
         resource_id=recipe.resource_id
     )
-    if db_recipe.sandwich_id is None:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Sandwich ID is required")
     db.add(db_recipe)
     db.commit()
     db.refresh(db_recipe)
